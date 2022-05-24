@@ -3,9 +3,9 @@
   --gris: #757575;
   --blanco: #fff;
   --oscuro: #212121;
-  --primario: #ffc107;
-  --secundario: #0097a7;
-  --grisClaro: #dfe9f3;
+  --secundario: #dfe9f3;
+  --primario: #8fd6eb;
+  --amarillo: #f9d195;
   /* FUENTES */
   --fuentePrincipal: "Krub", sans-serif;
   --separacion: 5rem;
@@ -25,11 +25,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  background-image: linear-gradient(
-    to top,
-    var(--grisClaro) 0%,
-    var(--blanco) 100%
-  );
+  background: #f9d195;
   font-family: var(--fuentePrincipal);
 }
 
@@ -84,7 +80,7 @@ img {
   width: 90%;
   padding: 1rem 3rem;
   background-color: var(--secundario);
-  color: var(--blanco);
+  color: var(--oscuro);
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
@@ -103,7 +99,36 @@ img {
   [class$="__btn"]:hover {
     cursor: pointer;
     background-color: var(--primario);
+    color: var(--blanco)
   }
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+}
+
+.logo__icono {
+  padding: 1rem;
+  width: 6rem;
+  background-color: var(--primario);
+  color: var(--blanco);
+  border: 4px solid var(--blanco);
+  border-radius: 50%;
+}
+
+.logo__titulo {
+  margin: 1rem auto;
 }
 
 .nav-bg {
@@ -113,19 +138,20 @@ img {
 .nav {
   display: flex;
   flex-direction: column;
+  text-align: center;
+  padding: 1rem;
 }
 
 @media (min-width: 768px) {
   .nav {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
   }
 }
 
 .nav__link {
-  text-align: center;
   padding: 1rem;
-  color: var(--blanco);
+  color: var(--oscuro);
   text-decoration: none;
   font-size: 2rem;
   font-weight: bold;
@@ -134,17 +160,23 @@ img {
 @media (hover: hover) {
   .nav__link:hover {
     background-color: var(--primario);
-    color: var(--oscuro);
+    color: var(--blanco);
   }
 }
 
 .hero {
-  background-image: url(../assets/img/pexels-fauxels-3184454.jpg);
+  margin-bottom: 2rem;
+  height: 45rem;
+  background-image: url(../assets/img/hero.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 44rem;
   position: relative;
-  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background-attachment: fixed;
+  }
 }
 
 .hero__contenedor {
@@ -200,7 +232,8 @@ img {
   border-radius: 50%;
 }
 
-.service__icono {
+.servicio__icono {
+  width: 5rem;
   color: var(--oscuro);
 }
 
